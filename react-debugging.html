@@ -61,13 +61,14 @@
             padding: "10px"
           }
           // No need to change anything ABOVE this line ^
-
+          
           return(
+            <>
             <h1>Draw a Card</h1>
-            <button onClick={}>
+            <button onClick={this.drawCard}>
               Click to Draw a Card
             </button>
-            <button onClick={shuffle}>
+            <button onClick={this.shuffle}>
               Return Cards and Shuffle Deck
             </button>
             <div style={handStyles}>
@@ -79,6 +80,7 @@
                 )
               })}
             </div>
+            </>
           )
         }
       }
@@ -89,3 +91,8 @@
     </script>
   </body>
 </html>
+
+
+// 1. Return was missing the enclosing tags for the return statement
+// 2. First button was missing a function to be executed by onClick
+// 3. shuffle function must be referenced with this. to create a path for onClick to see shuffle function within App component. 
